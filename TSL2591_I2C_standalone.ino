@@ -45,9 +45,9 @@ void TSL2591_reset(void) {
   writeRegister(TSL2591_REG_CONFIG, TSL2591_MASK_SRESET);
 }
 
-// set gain 0 to 3 (low, med, high, max), set integration time 100 to 600 (ms)
+// set gain 0 to 3 (low, med, high, max), set integration time 1 to 6 (100 to 600 ms)
 void TSL2591_config(uint8_t gain, uint8_t time) {
-  writeRegister(TSL2591_REG_CONFIG, (gain << 4 | (time / 100 - 1))); //bits 5:4 and 2:0
+  writeRegister(TSL2591_REG_CONFIG, (gain << 4 | (time - 1))); //bits 5:4 and 2:0
 }
 
 // get readings from C0 and C1
