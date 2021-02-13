@@ -7,6 +7,7 @@
 // https://www.arduino.cc/reference/en/libraries/tsl2591mi/
 // SJ Remington 2/2021
 
+// some useful device-specific constants
 #define TSL2591_ADDR 0x29
 #define TSL2591_CMD 0b10000000
 #define TSL2591_TRANSACTION_NORMAL 0b00100000
@@ -14,7 +15,8 @@
 #define TSL2591_MASK_PON 0b00000001
 #define TSL2591_MASK_SRESET 0b10000000
 #define TSL2591_MASK_AVALID 0b00000001
-// register numbers
+
+// device-specific register numbers
 #define TSL2591_REG_ENABLE 0x00
 #define TSL2591_REG_CONFIG 0x01
 #define TSL2591_REG_ID 0x12
@@ -24,6 +26,7 @@
 #define TSL2591_REG_C1DATAL 0x16
 #define TSL2591_REG_C1DATAH 0x17
 
+// read a register in the TSL2591
 int readRegister(uint8_t reg) {  //int return value, because -1 is possible
   Wire.beginTransmission(TSL2591_ADDR);
   Wire.write(TSL2591_CMD | TSL2591_TRANSACTION_NORMAL | reg);
@@ -32,6 +35,7 @@ int readRegister(uint8_t reg) {  //int return value, because -1 is possible
   return Wire.read();
 }
 
+//write value to TSL2591 register. Special functions not implemented
 void writeRegister(uint8_t reg, uint8_t value)
 {
   Wire.beginTransmission(TSL2591_ADDR);
@@ -50,7 +54,7 @@ void TSL2591_config(uint8_t gain, uint8_t time) {
   writeRegister(TSL2591_REG_CONFIG, (gain << 4 | (time - 1))); //bits 5:4 and 2:0
 }
 
-// get readings from C0 and C1
+// get readings from C0 (visible photodiode) and C1 (IR photodiode)
 uint32_t TSL2591_getData(void) {
   uint32_t data = 0;
   uint8_t t;
