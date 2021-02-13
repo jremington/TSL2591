@@ -89,7 +89,7 @@ void setup() {
   }
   TSL2591_reset();
   TSL2591_enable();  //use TSL2591_reset() to disable and power down
-  TSL2591_config(1, 100); //medium gain, 100 ms integration time
+  TSL2591_config(1, 1); //medium gain, 100 ms integration time
 }
 
 void loop() {
