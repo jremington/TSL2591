@@ -77,7 +77,6 @@ void TSL2591_regDump() {
 }
 
 void setup() {
-  // put your setup code here, to run once:
   Serial.begin(9600);
 
   //wait for serial connection to open (only necessary on some boards)
@@ -94,12 +93,14 @@ void setup() {
   TSL2591_reset();
   TSL2591_enable();  //use TSL2591_reset() to disable and power down
   TSL2591_config(1, 1); //medium gain, 100 ms integration time
+  delay(100);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
   delay(300);
+  
   while((readRegister(TSL2591_REG_STATUS)&1) == 0); //wait for data available
+  
   uint32_t data = TSL2591_getData();
   Serial.print("C0 "); Serial.println( (unsigned int) data&0xFFFF); //visible PD
   Serial.print("C1 "); Serial.println( (unsigned int) (data>>16)&0xFFFF); //IR PD
