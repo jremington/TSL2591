@@ -66,7 +66,7 @@ uint32_t TSL2591_getData(void) {
 }
 // power on and turn on ambient light sensor
 void TSL2591_enable() {
-  writeRegister(TSL2591_REG_ENABLE, 3);
+  writeRegister(TSL2591_REG_ENABLE, TSL2591_MASK_AEN | TSL2591_MASK_PON);
 }
 
 // register dump for debugging
