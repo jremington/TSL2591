@@ -17,5 +17,10 @@ https://www.arduino.cc/reference/en/libraries/tsl2591mi/
 
 Tested with Adafruit TSL2591 Stemma breakout, after removing the obnoxious LED from the module.
 
+**CODE NOTES** 
+
+1. Light level interrupts are not implemented. 
+2. For low light data collection, there are only two useful parameter settings for the module: gain and integration time. Use the function **TSL2591_config(gain, int_time)** to set these parameters. gain = 0 to 3 corresponds to Low, Medium, High and Maximum gain. int_time = 1 to 6 corresponds to 100 to 600 millisecond exposure. 
+
 SJ Remington 2/2021
 
