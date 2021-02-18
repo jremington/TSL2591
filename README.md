@@ -19,7 +19,7 @@ Tested with Adafruit TSL2591 Stemma breakout, after removing the obnoxious LED f
 
 **CODE NOTES** 
 
-1. Light level interrupts are not implemented. 
+1. Light level change detection and interrupts are not implemented. 
 2. For light level data collection, there are only two useful parameter settings for the module: gain and integration time. Use the function **TSL2591_config(gain, int_time)** to set these parameters. gain = 0 to 3 corresponds to Low, Medium, High and Maximum gain. int_time = 1 to 6 corresponds to 100 to 600 millisecond exposure. 
 3. The function TSL2591_getData() returns a 32 bit unsigned integer. The high order 16 bits is the visible photodiode intensity, the low order 16 bits is the IR photodiode intensity.
 
