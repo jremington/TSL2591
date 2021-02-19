@@ -9,7 +9,7 @@ For detecting and quantifying low light levels, none of the interrupt flexibity 
 
 I am impressed by the sensitivity. It easily registers light reflected from surfaces illuminated by weak moonlight.
 
-This code was put together with help from the VERY COMPLETE TSL2591 library by Austria Microsystems: "TSL2591MI.h" Yet Another Arduino ams TSL2591MI Lux Sensor 
+This code was put together with help from the VERY COMPLETE TSL2591 library by Austria Microsystems: "TSL2591MI.h" Yet Another Arduino ams TSL2591MI Lux Sensor. This library is recommended if the more complex features of the sensor are needed, such as automatically detecting changes in illumination level. Download at: 
 
 https://bitbucket.org/christandlg/tsl2591mi/src/master/
 
