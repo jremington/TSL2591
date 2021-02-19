@@ -5,7 +5,7 @@ This is a complicated sensor that tries to do a lot independently of an MCU, lik
 
 There are two or three Arduino device libraries which try to hide that complexity, but they basically just create additional confusion, because they are themselves are quite complex and the library function descriptions are poorly written (by programmers, not users).
 
-For detecting and quantifying low light levels, none of the interrupt flexibity or ambient illumination calculations are useful, so I wrote a minimal amount of code to initialize and configure the sensor gain and integration time, and grab data from it. I removed the obnoxious "power LED" from the Adafruit breakout module, to prevent it from interfering with low light readings. 
+For detecting and quantifying low light levels, none of the interrupt flexibity or ambient illumination calculations are useful, so I wrote a minimal amount of code to initialize and configure the sensor gain and integration time, and grab data from it. I removed the obnoxious "power LED" from the Adafruit breakout module, to prevent it from interfering with low light readings. **UPDATE:**  Adafruit recently added a cuttable jumper on the back of the Stemma board to disable the LED.
 
 I am impressed by the sensitivity. It easily registers light reflected from surfaces illuminated by weak moonlight.
 
