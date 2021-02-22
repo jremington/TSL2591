@@ -19,7 +19,7 @@ Tested with Adafruit TSL2591 Stemma breakout, after removing the obnoxious LED f
 
 **CODE NOTES** 
 
-0. This code returns ONLY THE RAW readings from the photodiodes. Lux levels are an approximation for how the human eye sees, and are estimated from the raw readings by a calculation that is documented elsewhere. In my opinion lux levels are not meaningful for low light intensities as the human eye sees black and white only. If you require the lux estimates, use the TSL2591MI library linked above, which has that calculation built in.
+0. This code returns ONLY THE RAW readings from the photodiodes, which I use for measuring low light levels. The sensor does not measure lux. Lux levels are an approximation for how the human eye sees, and are estimated from the raw readings by a calculation that is documented elsewhere. In my opinion lux levels are not meaningful for low light intensities as the human eye sees black and white only. If you require the lux estimates, use the TSL2591MI library linked above, which has that calculation built in.
 
 1. Light level change detection and interrupts are not implemented.
  
